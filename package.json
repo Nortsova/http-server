@@ -1,0 +1,56 @@
+{
+  "name": "HTTPServer",
+  "version": "1.0.0",
+  "description": "MyHTTPServer",
+  "main": "index.js",
+  "author": "Anastasia",
+  "license": "MIT",
+  "scripts": {
+    "start1111": "rimraf ./dist && babel -d ./dist ./main.js -s && node dist/main.js",
+    "start": "node dev.js",
+    "dev": "node dev.js",
+    "lint:js": "eslint ./src",
+    "lint-staged": "lint-staged"
+  },
+  "devDependencies": {
+    "babel-register": "^6.23.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-config-prettier": "^1.4.1",
+    "eslint-plugin-import": "^2.2.0",
+    "lint-staged": "^3.3.1",
+    "pre-commit": "^1.2.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "node": true
+    }
+  },
+  "pre-commit": "lint-staged",
+  "dependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-preset-env": "^1.1.11",
+    "rimraf": "^2.6.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
